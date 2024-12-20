@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
-from api.config import settings
-from api.data import api_data
+from config import settings
+from data import api_data
 
 
 region_codes = api_data.regionCodes
@@ -23,6 +23,7 @@ async def read_region_codes(region_code_id: str):
     if region_code_id not in region_codes:
         raise HTTPException(status_code=404, detail="ID not found: " + region_code_id)
     return region_codes[region_code_id]
+
 
 @router.get("/{region_code_id}/cloudProviderRegion")
 async def read_cloud_provider_region(region_code_id: str):

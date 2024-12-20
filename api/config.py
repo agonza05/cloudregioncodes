@@ -1,15 +1,18 @@
-from os.path import join, dirname, normpath
+# from os.path import join, dirname, normpath
 from functools import lru_cache
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-dotenv_file_local = normpath(join(dirname(__file__), "../.env/.env.local"))
-dotenv_file_production = normpath(join(dirname(__file__), "../.env/.env.prod"))
+# dotenv_file_local = normpath(join(dirname(__file__), "../.env/.env.local"))
+# dotenv_file_production = normpath(join(dirname(__file__), "../.env/.env.prod"))
+dotenv_file_local = ".env/.env.local"
+dotenv_file_production = ".env/.env.prod"
+
 
 
 class Settings(BaseSettings):
-    app_base_path: str = "/api/v1"
-    app_name: str = "Cloudregion Codes API"
+    app_base_path: str = "/v1"
+    app_name: str = "CloudRegion Codes API"
     app_url: str = "http://localhost"
     admin_email: str = "alberto@agonza.net"
     default_error_message: str = "Item not found."

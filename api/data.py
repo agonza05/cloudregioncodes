@@ -1,4 +1,4 @@
-from os.path import join, dirname, normpath
+# from os.path import join, dirname, normpath
 from functools import lru_cache
 from typing import Dict, Optional
 from pydantic import BaseModel
@@ -31,7 +31,8 @@ class ApiData(BaseModel):
     regionsByLocation: Dict[str, Dict[str, CloudProviderRegion]]
 
 
-data_file = normpath(join(dirname(__file__), "../data/data.json"))
+# data_file = normpath(join(dirname(__file__), "data/data.json"))
+data_file = "data/data.json"
 
 
 @lru_cache
