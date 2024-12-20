@@ -26,7 +26,7 @@ async def read_regions_by_location(location_id: str):
 
 
 @router.get("/{location_id}/{cloud_provider_id}")
-async def read_region_by_location_provider(location_id: str, cloud_provider_id: str):
+async def read_provider_location(location_id: str, cloud_provider_id: str):
     if location_id not in regions_by_location:
         raise HTTPException(status_code=404, detail="ID not found: " + location_id)
     elif cloud_provider_id not in regions_by_location[location_id]:

@@ -40,4 +40,3 @@ def get_api_data():
 
 
 api_data = get_api_data()
-# api_data = ApiData.parse_file(data_file)
