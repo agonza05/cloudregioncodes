@@ -1,5 +1,5 @@
 from os.path import join, dirname, normpath
-
+from functools import lru_cache
 from typing import Dict, Optional
 from pydantic import BaseModel
 
@@ -9,10 +9,12 @@ class CloudProvider(BaseModel):
     name: str
     description: Optional[str] = None
 
+
 class CloudProviderRegion(BaseModel):
     id: str
     name: str
     displayName: str
+
 
 class RegionCode(BaseModel):
     id: str
@@ -22,6 +24,7 @@ class RegionCode(BaseModel):
     location: str
     cloudProviderRegion: CloudProviderRegion
 
+
 class ApiData(BaseModel):
     cloudProviders: Dict[str, CloudProvider]
     regionCodes: Dict[str, RegionCode]
@@ -30,5 +33,11 @@ class ApiData(BaseModel):
 
 data_file = normpath(join(dirname(__file__), "../data/data.json"))
 
-# parse data from json file
-api_data = ApiData.parse_file(data_file)
+
+@lru_cache
+def get_api_data():
+    return ApiData.parse_file(data_file)
+
+
+api_data = get_api_data()
+# api_data = ApiData.parse_file(data_file)
