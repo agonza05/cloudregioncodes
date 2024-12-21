@@ -1,4 +1,5 @@
-# from os.path import join, dirname, normpath
+import httpx
+
 from functools import lru_cache
 from typing import Dict, Optional
 from pydantic import BaseModel
@@ -31,13 +32,16 @@ class ApiData(BaseModel):
     regionsByLocation: Dict[str, Dict[str, CloudProviderRegion]]
 
 
-# data_file = normpath(join(dirname(__file__), "data/data.json"))
-data_file = "data/data.json"
-
+# url = "https://raw.githubusercontent.com/agonza05/cloudregioncodes/refs/heads/main/exports/regioncodes.json"
+# data_file = "data/data.json"
 
 @lru_cache
 def get_api_data():
-    return ApiData.parse_file(data_file)
+    # return ApiData.parse_file(data_file)
+    url = "https://raw.githubusercontent.com/agonza05/cloudregioncodes/refs/heads/main/exports/regioncodes.json"
+    response = httpx.get(url)
+    response.raise_for_status()
+    return ApiData.model_validate(response.json())
 
 
 api_data = get_api_data()

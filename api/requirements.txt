@@ -3,3 +3,4 @@ pydantic-settings
 typing
 python-dotenv
 fastapi[standard]
+httpx
