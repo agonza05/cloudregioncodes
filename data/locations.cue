@@ -10,21 +10,21 @@ _countries: #Countries & {
 	nl: name: "Netherlands"
 }
 
-_locations: #Locations & {
+locations: #Locations & {
 	fra: {
-		name:    "Frankfurt"
-		country: "de"
+		name:         "Frankfurt"
+		country_code: "de"
 	}
 	dub: {
-		name:    "Dublin"
-		country: "ie"
+		name:         "Dublin"
+		country_code: "ie"
 	}
 	eem: {
-		name:    "Eemshaven"
-		country: "nl"
+		name:         "Eemshaven"
+		country_code: "nl"
 	}
 	fsn: {
-		name:    "Falkenstein"
-		country: "de"
+		name:         "Falkenstein"
+		country_code: "de"
 	}
 }

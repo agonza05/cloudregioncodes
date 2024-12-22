@@ -26,22 +26,18 @@ class RegionCode(BaseModel):
     cloudProviderRegion: CloudProviderRegion
 
 
-class Locations(BaseModel):
-    id: str
-    name: str
-    country_code: str
-    country: str
-
-
 class ApiData(BaseModel):
     cloudProviders: Dict[str, CloudProvider]
     regionCodes: Dict[str, RegionCode]
     regionsByLocation: Dict[str, Dict[str, CloudProviderRegion]]
-    locations: Dict[str, Locations]
 
+
+# url = "https://raw.githubusercontent.com/agonza05/cloudregioncodes/refs/heads/main/exports/regioncodes.json"
+# data_file = "data/data.json"
 
 @lru_cache
 def get_api_data():
+    # return ApiData.parse_file(data_file)
     url = "https://raw.githubusercontent.com/agonza05/cloudregioncodes/refs/heads/main/exports/regioncodes.json"
     response = httpx.get(url)
     response.raise_for_status()

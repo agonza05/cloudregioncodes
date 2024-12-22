@@ -12,9 +12,10 @@ package regioncodes
 }
 
 #Locations: [ID=#ThreeLetterCode]: {
-	name!:    string
-	country!: or(_countriesObjectKeys)
-	id:       ID
+	name!:         string
+	country_code!: or(_countriesObjectKeys)
+	country:       _countries[country_code].name
+	id:            ID
 }
 
 #CloudProviders: [ID=#ThreeLetterCode]: {
@@ -46,4 +47,4 @@ _cloudProvidersObjectKeys: [for k, v in cloudProviders {k}]
 
 _countriesObjectKeys: [for k, v in _countries {k}]
 
-_locationsObjectKeys: [for k, v in _locations {k}]
+_locationsObjectKeys: [for k, v in locations {k}]

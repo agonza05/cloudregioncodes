@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
-from config import settings
-from data import api_data
+from ..config import settings
+from ..data import api_data
 
 
 cloud_providers = api_data.cloudProviders

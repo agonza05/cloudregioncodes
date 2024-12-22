@@ -9,7 +9,6 @@ dotenv_file_local = ".env/.env.local"
 dotenv_file_production = ".env/.env.prod"
 
 
-
 class Settings(BaseSettings):
     app_base_path: str = "/v1"
     app_name: str = "CloudRegion Codes API"
