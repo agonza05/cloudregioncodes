@@ -79,5 +79,31 @@
                 "id": "northeurope"
             }
         }
+    },
+    "locations": {
+        "fra": {
+            "name": "Frankfurt",
+            "country_code": "de",
+            "country": "Germany",
+            "id": "fra"
+        },
+        "dub": {
+            "name": "Dublin",
+            "country_code": "ie",
+            "country": "Ireland",
+            "id": "dub"
+        },
+        "eem": {
+            "name": "Eemshaven",
+            "country_code": "nl",
+            "country": "Netherlands",
+            "id": "eem"
+        },
+        "fsn": {
+            "name": "Falkenstein",
+            "country_code": "de",
+            "country": "Germany",
+            "id": "fsn"
+        }
     }
 }
