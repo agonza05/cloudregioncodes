@@ -78,6 +78,7 @@ def sidebar_item(text: str, url: str) -> rx.Component:
                 text,
                 ("Overview", sidebar_item_icon("home")),
                 ("Cloud Providers", sidebar_item_icon("cloud")),
+                ("Locations", sidebar_item_icon("map-pin")),
                 sidebar_item_icon("layout-dashboard"),
             ),
             rx.text(text, size="3", weight="regular"),

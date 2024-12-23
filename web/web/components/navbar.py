@@ -30,6 +30,7 @@ def menu_item(text: str, url: str) -> rx.Component:
                 text,
                 ("Overview", menu_item_icon("home")),
                 ("Cloud Providers", menu_item_icon("cloud")),
+                ("Locations", menu_item_icon("map-pin")),
                 menu_item_icon("layout-dashboard"),
             ),
             rx.text(text, size="4", weight="regular"),
