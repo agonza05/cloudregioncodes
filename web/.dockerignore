@@ -1,3 +1,5 @@
 .web
-!.web/bun.lockb
-!.web/package.json
+.git
+__pycache__/*
+Dockerfile
+uploaded_files

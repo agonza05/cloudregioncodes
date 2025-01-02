@@ -29,7 +29,7 @@ class RegionCode(BaseModel):
 class Locations(BaseModel):
     id: str
     name: str
-    country_code: str
+    countryCode: str
     country: str
 
 
