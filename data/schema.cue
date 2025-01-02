@@ -26,15 +26,15 @@ package regioncodes
 }
 
 #RegionCodes: [ID=string]: {
-	name!:         string
-	description?:  string
-	cloudProvider: cloudProviders[cloudProvider].id
-	location:      locations[location].id
-	cloudRegion:   cloudRegions[location][cloudProvider]
-	id:            ID
+	name!:               string
+	description?:        string
+	cloudProvider:       cloudProviders[cloudProvider].id
+	location:            locations[location].id
+	cloudProviderRegion: regionsByLocation[location][cloudProvider]
+	id:                  ID
 }
 
-#CloudRegions: [or(_locationsObjectKeys)]: [or(_cloudProvidersObjectKeys)]: {
+#RegionsByLocation: [or(_locationsObjectKeys)]: [or(_cloudProvidersObjectKeys)]: {
 	displayName!: string
 	name:         name
 	id:           name
