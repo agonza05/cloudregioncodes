@@ -1,15 +1,15 @@
 import reflex as rx
-from typing import Union, List
+from typing import List
 
 
-from ..data import api_data
+from ..data import get_data
 
 class Location(rx.Base):
     """The location class."""
 
     id: str
     name: str
-    country_code: str
+    countryCode: str
     country: str
 
 
@@ -56,7 +56,7 @@ class LocationsState(rx.State):
                     for attr in [
                         "name",
                         "id",
-                        "country_code",
+                        "countryCode",
                         "country",
                     ]
                 )
@@ -95,7 +95,9 @@ class LocationsState(rx.State):
         self.offset = (self.total_pages - 1) * self.limit
 
     def load_entries(self):
-        data_locations = api_data.model_dump(mode="json").get("locations")
+        # data_locations = api_data.model_dump(mode="json").get("locations")
+        path = "locations/"
+        data_locations = get_data(path)
         self.items = [Location(**location) for location in data_locations.values()]
         self.total_items = len(self.items)
 

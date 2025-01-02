@@ -1,9 +1,8 @@
 import reflex as rx
-from typing import Dict, Union, List, Optional
-import httpx
+from typing import List, Optional
 
 
-from ..data import api_data
+from ..data import get_data
 
 class Item(rx.Base):
     """The item class."""
@@ -93,8 +92,14 @@ class TableState(rx.State):
     def last_page(self):
         self.offset = (self.total_pages - 1) * self.limit
 
+    # def load_entries(self):
+    #     data_cloud_providers = api_data.model_dump(mode="json").get("cloudProviders")
+    #     self.items = [Item(**cloud_provider) for cloud_provider in data_cloud_providers.values()]
+    #     self.total_items = len(self.items)
+
     def load_entries(self):
-        data_cloud_providers = api_data.model_dump(mode="json").get("cloudProviders")
+        path = "cloudProviders/"
+        data_cloud_providers = get_data(path)
         self.items = [Item(**cloud_provider) for cloud_provider in data_cloud_providers.values()]
         self.total_items = len(self.items)
 

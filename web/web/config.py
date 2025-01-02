@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     app_name: str
     app_url: str
     admin_email: str
+    cloudregioncodesapi_url: str
 
     model_config = SettingsConfigDict(
         env_file=(dotenv_file_local, dotenv_file_production), extra="ignore"

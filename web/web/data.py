@@ -4,6 +4,7 @@ from functools import lru_cache
 from typing import Dict, Optional
 from pydantic import BaseModel
 
+from .config import settings
 
 class CloudProvider(BaseModel):
     id: str
@@ -40,12 +41,19 @@ class ApiData(BaseModel):
     locations: Dict[str, Locations]
 
 
-@lru_cache
-def get_api_data():
-    url = "https://raw.githubusercontent.com/agonza05/cloudregioncodes/refs/heads/main/exports/regioncodes.json"
+# @lru_cache
+# def get_api_data():
+#     url = "https://raw.githubusercontent.com/agonza05/cloudregioncodes/refs/heads/main/exports/regioncodes.json"
+#     response = httpx.get(url)
+#     response.raise_for_status()
+#     return ApiData.model_validate(response.json())
+
+
+def get_data(path: str):
+    url = settings.cloudregioncodesapi_url + path
     response = httpx.get(url)
     response.raise_for_status()
-    return ApiData.model_validate(response.json())
+    return response.json()
 
 
-api_data = get_api_data()
+# api_data = get_api_data()

@@ -28,7 +28,7 @@ def _show_item(item: Location, index: int) -> rx.Component:
         rx.table.cell(item.country),
         rx.table.row_header_cell(item.name),
         rx.table.cell(item.id),
-        rx.table.cell(item.country_code),
+        rx.table.cell(item.countryCode),
         style={"_hover": {"bg": hover_color}, "bg": bg_color},
         align="center",
     )
@@ -124,7 +124,7 @@ def main_table() -> rx.Component:
                     [
                         "name",
                         "id",
-                        "country_code",
+                        "countryCode",
                         "country",
                     ],
                     placeholder="Sort By: Name",
