@@ -25,7 +25,8 @@
             "location": "fra",
             "cloudRegion": {
                 "displayName": "Europe Central (Frankfurt)",
-                "name": "eu-central-1"
+                "name": "eu-central-1",
+                "id": "eu-central-1"
             },
             "id": "eu1"
         },
@@ -35,7 +36,8 @@
             "location": "dub",
             "cloudRegion": {
                 "displayName": "North Europe (Dublin)",
-                "name": "northeurope"
+                "name": "northeurope",
+                "id": "northeurope"
             },
             "id": "eu2"
         },
@@ -45,7 +47,8 @@
             "location": "syd",
             "cloudRegion": {
                 "displayName": "Sydney",
-                "name": "australia-southeast1"
+                "name": "australia-southeast1",
+                "id": "australia-southeast1"
             },
             "id": "au3"
         }
@@ -54,87 +57,105 @@
         "fra": {
             "aws": {
                 "displayName": "Europe Central (Frankfurt)",
-                "name": "eu-central-1"
+                "name": "eu-central-1",
+                "id": "eu-central-1"
             },
             "azr": {
                 "displayName": "Germany West Central (Frankfurt)",
-                "name": "germanywestcentral"
+                "name": "germanywestcentral",
+                "id": "germanywestcentral"
             },
             "gcp": {
                 "displayName": "Frankfurt",
-                "name": "europe-west3"
+                "name": "europe-west3",
+                "id": "europe-west3"
             },
             "oci": {
                 "displayName": "Germany Central (Frankfurt)",
-                "name": "eu-frankfurt-1"
+                "name": "eu-frankfurt-1",
+                "id": "eu-frankfurt-1"
             }
         },
         "dub": {
             "aws": {
                 "displayName": "Europe West (Ireland)",
-                "name": "eu-west-1"
+                "name": "eu-west-1",
+                "id": "eu-west-1"
             },
             "azr": {
                 "displayName": "North Europe (Dublin)",
-                "name": "northeurope"
+                "name": "northeurope",
+                "id": "northeurope"
             }
         },
         "hmx": {
             "gcp": {
                 "displayName": "Finland",
-                "name": "europe-north1"
+                "name": "europe-north1",
+                "id": "europe-north1"
             }
         },
         "osl": {
             "azr": {
                 "displayName": "Norway East (Oslo)",
-                "name": "norwayeast"
+                "name": "norwayeast",
+                "id": "norwayeast"
             }
         },
         "arn": {
             "aws": {
                 "displayName": "Europe North (Stockholm)",
-                "name": "eu-north-1"
+                "name": "eu-north-1",
+                "id": "eu-north-1"
             },
             "oci": {
                 "displayName": "Sweden Central (Stockholm)",
-                "name": "eu-stockholm-1"
+                "name": "eu-stockholm-1",
+                "id": "eu-stockholm-1"
             }
         },
         "lon": {
             "aws": {
                 "displayName": "Europe West (London)",
-                "name": "eu-west-2"
+                "name": "eu-west-2",
+                "id": "eu-west-2"
             },
             "azr": {
                 "displayName": "UK South (London)",
-                "name": "uksouth"
+                "name": "uksouth",
+                "id": "uksouth"
             },
             "gcp": {
                 "displayName": "London",
-                "name": "europe-west2"
+                "name": "europe-west2",
+                "id": "europe-west2"
             },
             "oci": {
                 "displayName": "UK South (London)",
-                "name": "uk-london-1"
+                "name": "uk-london-1",
+                "id": "uk-london-1"
             }
         },
         "syd": {
             "aws": {
                 "displayName": "Asia Pacific (Sydney)",
-                "name": "ap-southeast-2"
+                "name": "ap-southeast-2",
+                "id": "ap-southeast-2"
             },
             "azr": {
                 "displayName": "Australia East (Sydney)",
-                "name": "australiaeast"
+                "name": "australiaeast",
+                "id": "australiaeast"
             },
             "gcp": {
                 "displayName": "Sydney",
-                "name": "australia-southeast1"
+                "name": "australia-southeast1",
+                "id": "australia-southeast1"
             },
             "oci": {
                 "displayName": "Australia East (Sydney)",
-                "name": "ap-sydney-1"
+                "name": "ap-sydney-1",
+                "id": "ap-sydney-1"
             }
         }
     },

@@ -14,7 +14,7 @@ package regioncodes
 
 #Locations: [ID=#ThreeLetterCode]: {
 	name!:       string
-	countryCode: #TwoLetterCode
+	countryCode: _countries[countryCode].id
 	country:     _countries[countryCode].name
 	id:          ID
 }

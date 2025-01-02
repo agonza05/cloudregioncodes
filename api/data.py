@@ -11,7 +11,7 @@ class CloudProvider(BaseModel):
     description: Optional[str] = None
 
 
-class CloudProviderRegion(BaseModel):
+class CloudRegion(BaseModel):
     id: str
     name: str
     displayName: str
@@ -23,20 +23,20 @@ class RegionCode(BaseModel):
     description: Optional[str] = None
     cloudProvider: str
     location: str
-    cloudProviderRegion: CloudProviderRegion
+    cloudRegion: CloudRegion
 
 
 class Locations(BaseModel):
     id: str
     name: str
-    country_code: str
+    countryCode: str
     country: str
 
 
 class ApiData(BaseModel):
     cloudProviders: Dict[str, CloudProvider]
     regionCodes: Dict[str, RegionCode]
-    regionsByLocation: Dict[str, Dict[str, CloudProviderRegion]]
+    cloudRegions: Dict[str, Dict[str, CloudRegion]]
     locations: Dict[str, Locations]
 
 

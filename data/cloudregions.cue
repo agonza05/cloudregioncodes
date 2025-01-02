@@ -7,7 +7,7 @@ cloudProviders: #CloudProviders & {
 	oci: name: "Oracle Cloud Infrastructure"
 }
 
-cloudRegions: {
+cloudRegions: #CloudRegions & {
 	fra: {
 		aws: {displayName: "Europe Central (Frankfurt)", name: "eu-central-1"}
 		azr: {displayName: "Germany West Central (Frankfurt)", name: "germanywestcentral"}
