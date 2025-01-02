@@ -4,7 +4,6 @@ assets/external/
 .cursorignore
 .venv/
 .vscode/
-.web/**
-!.web/_static/**
+.web/
 __pycache__/
 venv/

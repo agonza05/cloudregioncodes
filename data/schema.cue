@@ -1,7 +1,8 @@
 package regioncodes
 
 //// Schema ////
-#ThreeLetterCode: =~"^[a-z][a-z][a-z]$"
+
+#ThreeLetterCode: =~"^[a-z]{3}$"
 
 #TwoLetterCode: =~"^[a-z][a-z]$"
 
@@ -12,10 +13,10 @@ package regioncodes
 }
 
 #Locations: [ID=#ThreeLetterCode]: {
-	name!:         string
-	country_code!: or(_countriesObjectKeys)
-	country:       _countries[country_code].name
-	id:            ID
+	name!:       string
+	countryCode: #TwoLetterCode
+	country:     _countries[countryCode].name
+	id:          ID
 }
 
 #CloudProviders: [ID=#ThreeLetterCode]: {
@@ -25,26 +26,21 @@ package regioncodes
 }
 
 #RegionCodes: [ID=string]: {
-	name!:               string
-	cloudProvider!:      or(_cloudProvidersObjectKeys)
-	location!:           or(_locationsObjectKeys)
-	cloudProviderRegion: regionsByLocation[location][cloudProvider]
-	description?:        string
-	id:                  ID
+	name!:         string
+	description?:  string
+	cloudProvider: cloudProviders[cloudProvider].id
+	location:      locations[location].id
+	cloudRegion:   cloudRegions[location][cloudProvider]
+	id:            ID
 }
 
-#RegionsByLocation: [or(_locationsObjectKeys)]: [or(_cloudProvidersObjectKeys)]: #CloudProviderRegion
-
-#CloudProviderRegion: {
-	name!:        string
+#CloudRegions: [or(_locationsObjectKeys)]: [or(_cloudProvidersObjectKeys)]: {
 	displayName!: string
+	name:         name
 	id:           name
 }
 
 //// Data Computed ////
 
 _cloudProvidersObjectKeys: [for k, v in cloudProviders {k}]
-
-_countriesObjectKeys: [for k, v in _countries {k}]
-
 _locationsObjectKeys: [for k, v in locations {k}]

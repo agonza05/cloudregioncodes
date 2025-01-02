@@ -10,13 +10,13 @@ regionCodes: #RegionCodes & {
 		location:      "fra"
 	}
 	eu2: {
-		name:          "Azure - DE"
+		name:          "Azure - IE"
 		cloudProvider: "azr"
-		location:      "fra"
+		location:      "dub"
 	}
-	eu3: {
+	au3: {
 		name:          "GCP - DE"
 		cloudProvider: "gcp"
-		location:      "fra"
+		location:      "syd"
 	}
 }

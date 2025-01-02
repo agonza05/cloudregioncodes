@@ -11,6 +11,10 @@
         "aws": {
             "name": "Amazon Web Services",
             "id": "aws"
+        },
+        "oci": {
+            "name": "Oracle Cloud Infrastructure",
+            "id": "oci"
         }
     },
     "regionCodes": {
@@ -19,91 +23,193 @@
             "description": "AWS Frankfurt",
             "cloudProvider": "aws",
             "location": "fra",
-            "cloudProviderRegion": {
+            "cloudRegion": {
                 "displayName": "Europe Central (Frankfurt)",
-                "name": "eu-central-1",
-                "id": "eu-central-1"
+                "name": "eu-central-1"
             },
             "id": "eu1"
         },
         "eu2": {
-            "name": "Azure - DE",
+            "name": "Azure - IE",
             "cloudProvider": "azr",
-            "location": "fra",
-            "cloudProviderRegion": {
-                "displayName": "Germany West Central (Frankfurt)",
-                "name": "germanywestcentral",
-                "id": "germanywestcentral"
+            "location": "dub",
+            "cloudRegion": {
+                "displayName": "North Europe (Dublin)",
+                "name": "northeurope"
             },
             "id": "eu2"
         },
-        "eu3": {
+        "au3": {
             "name": "GCP - DE",
             "cloudProvider": "gcp",
-            "location": "fra",
-            "cloudProviderRegion": {
-                "displayName": "Frankfurt",
-                "name": "europe-west3",
-                "id": "europe-west3"
+            "location": "syd",
+            "cloudRegion": {
+                "displayName": "Sydney",
+                "name": "australia-southeast1"
             },
-            "id": "eu3"
+            "id": "au3"
         }
     },
-    "regionsByLocation": {
+    "cloudRegions": {
         "fra": {
             "aws": {
                 "displayName": "Europe Central (Frankfurt)",
-                "name": "eu-central-1",
-                "id": "eu-central-1"
-            },
-            "gcp": {
-                "displayName": "Frankfurt",
-                "name": "europe-west3",
-                "id": "europe-west3"
+                "name": "eu-central-1"
             },
             "azr": {
                 "displayName": "Germany West Central (Frankfurt)",
-                "name": "germanywestcentral",
-                "id": "germanywestcentral"
+                "name": "germanywestcentral"
+            },
+            "gcp": {
+                "displayName": "Frankfurt",
+                "name": "europe-west3"
+            },
+            "oci": {
+                "displayName": "Germany Central (Frankfurt)",
+                "name": "eu-frankfurt-1"
             }
         },
         "dub": {
             "aws": {
                 "displayName": "Europe West (Ireland)",
-                "name": "eu-west-1",
-                "id": "eu-west-1"
+                "name": "eu-west-1"
             },
             "azr": {
                 "displayName": "North Europe (Dublin)",
-                "name": "northeurope",
-                "id": "northeurope"
+                "name": "northeurope"
+            }
+        },
+        "hmx": {
+            "gcp": {
+                "displayName": "Finland",
+                "name": "europe-north1"
+            }
+        },
+        "osl": {
+            "azr": {
+                "displayName": "Norway East (Oslo)",
+                "name": "norwayeast"
+            }
+        },
+        "arn": {
+            "aws": {
+                "displayName": "Europe North (Stockholm)",
+                "name": "eu-north-1"
+            },
+            "oci": {
+                "displayName": "Sweden Central (Stockholm)",
+                "name": "eu-stockholm-1"
+            }
+        },
+        "lon": {
+            "aws": {
+                "displayName": "Europe West (London)",
+                "name": "eu-west-2"
+            },
+            "azr": {
+                "displayName": "UK South (London)",
+                "name": "uksouth"
+            },
+            "gcp": {
+                "displayName": "London",
+                "name": "europe-west2"
+            },
+            "oci": {
+                "displayName": "UK South (London)",
+                "name": "uk-london-1"
+            }
+        },
+        "syd": {
+            "aws": {
+                "displayName": "Asia Pacific (Sydney)",
+                "name": "ap-southeast-2"
+            },
+            "azr": {
+                "displayName": "Australia East (Sydney)",
+                "name": "australiaeast"
+            },
+            "gcp": {
+                "displayName": "Sydney",
+                "name": "australia-southeast1"
+            },
+            "oci": {
+                "displayName": "Australia East (Sydney)",
+                "name": "ap-sydney-1"
             }
         }
     },
     "locations": {
         "fra": {
             "name": "Frankfurt",
-            "country_code": "de",
+            "countryCode": "de",
             "country": "Germany",
             "id": "fra"
         },
         "dub": {
             "name": "Dublin",
-            "country_code": "ie",
+            "countryCode": "ie",
             "country": "Ireland",
             "id": "dub"
         },
-        "eem": {
-            "name": "Eemshaven",
-            "country_code": "nl",
-            "country": "Netherlands",
-            "id": "eem"
+        "hel": {
+            "name": "Helsinki",
+            "countryCode": "fi",
+            "country": "Finland",
+            "id": "hel"
         },
-        "fsn": {
-            "name": "Falkenstein",
-            "country_code": "de",
-            "country": "Germany",
-            "id": "fsn"
+        "hmx": {
+            "name": "Hamina",
+            "countryCode": "fi",
+            "country": "Finland",
+            "id": "hmx"
+        },
+        "osl": {
+            "name": "Oslo",
+            "countryCode": "no",
+            "country": "Norway",
+            "id": "osl"
+        },
+        "arn": {
+            "name": "Stockholm",
+            "countryCode": "se",
+            "country": "Sweden",
+            "id": "arn"
+        },
+        "lon": {
+            "name": "London",
+            "countryCode": "uk",
+            "country": "United Kingdom",
+            "id": "lon"
+        },
+        "mil": {
+            "name": "Milan",
+            "countryCode": "it",
+            "country": "Italy",
+            "id": "mil"
+        },
+        "par": {
+            "name": "Paris",
+            "countryCode": "fr",
+            "country": "France",
+            "id": "par"
+        },
+        "gru": {
+            "name": "São Paulo",
+            "countryCode": "br",
+            "country": "Brazil",
+            "id": "gru"
+        },
+        "akl": {
+            "name": "Auckland",
+            "countryCode": "nz",
+            "country": "New Zealand",
+            "id": "akl"
+        },
+        "syd": {
+            "name": "Sydney",
+            "countryCode": "au",
+            "country": "Australia",
+            "id": "syd"
         }
     }
 }
