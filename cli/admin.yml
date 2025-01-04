@@ -1,0 +1,10 @@
+version: 3
+
+tasks:
+  status:
+    desc: Get app status.
+    cmds:
+      - task: :http:get
+        vars:
+          URI_PATH: "app/status"
+    silent: true

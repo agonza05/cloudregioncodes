@@ -1,0 +1,27 @@
+version: 3
+
+includes:
+  http: ./http.yml
+  app: ./admin.yml
+  cp:
+    aliases: [cloudproviders]
+    taskfile: ./cloudproviders.yml
+  loc:
+    aliases: [locations]
+    taskfile: ./locations.yml
+  code:
+    aliases: [regioncodes]
+    taskfile: ./regioncodes.yml
+  reg:
+    aliases: [regionsbylocation]
+    taskfile: ./regionsbylocation.yml
+# tasks:
+#   update:
+#     aliases: [up]
+#     cmds:
+#       - brew update && brew upgrade && brew cleanup
+#     desc: Update packages.
+#     platforms: [darwin]
+#     preconditions:
+#       - type brew
+#     silent: true

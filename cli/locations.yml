@@ -1,0 +1,23 @@
+version: 3
+
+vars:
+  COLLECTION: "locations"
+
+tasks:
+  ls:
+    desc: List locations.
+    aliases: [list]
+    cmds:
+      - task: :http:get
+        vars:
+          URI_PATH: "{{ .COLLECTION }}/"
+    silent: true
+
+  sh-*:
+    aliases: [show]
+    desc: Show location details.
+    cmds:
+      - task: :http:get
+        vars:
+          URI_PATH: "{{ .COLLECTION }}/{{ index .MATCH 0 }}"
+    silent: true

@@ -1,0 +1,14 @@
+version: 3
+
+vars:
+  API_URL: "https://api.cloudregion.codes/v1"
+
+tasks:
+  get:
+    cmds:
+      - http -b {{ .API_URL }}/{{ .URI_PATH }}
+    desc: Get command.
+    preconditions:
+      - type http
+    silent: true
+    internal: true

@@ -1,0 +1,23 @@
+version: 3
+
+vars:
+  COLLECTION: "cloudProviders"
+
+tasks:
+  ls:
+    desc: List cloud providers.
+    aliases: [list]
+    cmds:
+      - task: :http:get
+        vars:
+          URI_PATH: "{{ .COLLECTION }}/"
+    silent: true
+
+  sh-*:
+    aliases: [show]
+    desc: Show cloud provider info.
+    cmds:
+      - task: :http:get
+        vars:
+          URI_PATH: "{{ .COLLECTION }}/{{ index .MATCH 0 }}"
+    silent: true

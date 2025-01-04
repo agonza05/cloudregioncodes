@@ -1,0 +1,32 @@
+version: 3
+
+vars:
+  COLLECTION: "regionCodes"
+
+tasks:
+  ls:
+    desc: List region codes.
+    aliases: [list]
+    cmds:
+      - task: :http:get
+        vars:
+          URI_PATH: "{{ .COLLECTION }}/"
+    silent: true
+
+  sh-*:
+    aliases: [show]
+    desc: Show region code info.
+    cmds:
+      - task: :http:get
+        vars:
+          URI_PATH: "{{ .COLLECTION }}/{{ index .MATCH 0 }}"
+    silent: true
+
+  reg-*:
+    aliases: [show-region]
+    desc: Show region code info.
+    cmds:
+      - task: :http:get
+        vars:
+          URI_PATH: "{{ .COLLECTION }}/{{ index .MATCH 0 }}/cloudProviderRegion"
+    silent: true

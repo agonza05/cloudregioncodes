@@ -1,0 +1,32 @@
+version: 3
+
+vars:
+  COLLECTION: "regionsByLocation"
+
+tasks:
+  ls:
+    desc: List regions by location.
+    aliases: [list]
+    cmds:
+      - task: :http:get
+        vars:
+          URI_PATH: "{{ .COLLECTION }}/"
+    silent: true
+
+  cp-*:
+    desc: List cloud provider by location.
+    aliases: [list-cloud]
+    cmds:
+      - task: :http:get
+        vars:
+          URI_PATH: "{{ .COLLECTION }}/{{ index .MATCH 0 }}"
+    silent: true
+
+  sh-*-*:
+    aliases: [show]
+    desc: Show region code info.
+    cmds:
+      - task: :http:get
+        vars:
+          URI_PATH: "{{ .COLLECTION }}/{{ index .MATCH 0 }}/{{ index .MATCH 1 }}"
+    silent: true
